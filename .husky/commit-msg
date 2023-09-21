@@ -1,0 +1,13 @@
+#!/usr/bin/env sh
+
+# Define your commit message format regex
+commit_msg_regex="^(feat|fix|chore|docs|style|refactor|perf|test|build): .{1,100}$"
+
+if ! [[ "$commit_msg" =~ $commit_msg_regex ]]; then
+    echo "Error: Invalid commit message format."
+    echo "Commit messages must follow the conventional commit format."
+    echo "Example: feat(core): add new feature"
+    exit 1
+fi
+
+exit 0
